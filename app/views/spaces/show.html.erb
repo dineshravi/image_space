@@ -1,0 +1,74 @@
+<div class="top">
+  <div class="container-fluid">
+    <div class='row-fluid'>
+      <div class='span6'>
+        <h1>Space.ly</h1>
+      </div>
+      <div class='span3' style='text-align:center'>
+        <span id="spinicon" class="spin"></span>
+      </div>
+      <div class='span3'>
+        <div class='row-fluid'>
+          <span class='span6'>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out spacely.cloudfoundry.com. My cool space" data-via="knowmevish" data-hashtags="teamdotly">Tweet</a> 
+          </span>
+          <span class ='span6'>
+            <div class="fb-like" data-send="false" data-layout="button_count" data-width="250" data-show-faces="false" data-font="lucida grande">
+            </div>
+          </span>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class ="image-window" id="image-window"> 
+</div>
+<div class="bottom">
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class ="span3">
+        <span class="addfile">+ AddFile</span>
+        <form action="<%= images_path %>" method="post" enctype="multipart/form-data" id="postForm" name="fileform">
+          <input type="file" id="file" name="file" class="fileinput"/> 
+        </form>
+        <!--<button type="submit" class="btn btn-primary">Upload</button>-->
+      </div>
+      <div class="span3">
+        <span class="dragdrop"> Drag, Drop Here </span>
+        <img src="/assets/arrow-up.jpg" style="height:50px;width:72px"/>
+      </div>
+      <div class="span6" style='text-align:right'>
+        <span class="enterurl"> + Enter URL </span>
+        <div class= "mainurl">
+          <form action="#" method="post" enctype="multipart/form-data" id="posturlForm" name="urlform">
+            <input type="submit" class="sub" value="upload"/>
+            <input type="text" id="url" name="remote_image_url" class="urlupload" placeholder="URL of Image"/> 
+           
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<% content_for :js do %>
+<script>
+var read_me = 0;
+var shurl = window.location.pathname;
+var furl = 'http://www.facebook.com/sharer.php?u' + shurl
+</script>
+<% end %>
+
+
+
